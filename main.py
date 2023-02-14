@@ -13,9 +13,12 @@ def new_deck():
     return deck
 
 rooms = {}
+num_rooms = 0
+room_numbers = {}
 
 @app.route("/")
 def index():
+    
     if "room" not in session:
         session["room"] = 1
 
@@ -40,10 +43,10 @@ def index():
         if points > 21:
             return render_template("lose.html")
 
-    return render_template("index.html", hand=hand, points=points)
+    return render_template("start.html", hand=hand, points=points)
 
-@app.route("/stand")
-def stand():
+@app.route("/room/<room_number>")
+def room(room_number):
     if "room" not in session:
         return "Error: Room not found in session"
 
