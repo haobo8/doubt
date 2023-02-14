@@ -2,7 +2,7 @@ from flask import Flask, render_template, session, request
 import random
 
 app = Flask(__name__)
-app.secret_key = "setitaskawarage1879"
+app.secret_key = "setitrandomly" # remember to change this, unless you want others to directly access the data of current deck
 
 suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
 ranks = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace']
